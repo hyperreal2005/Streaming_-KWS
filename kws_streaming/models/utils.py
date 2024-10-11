@@ -28,9 +28,11 @@ from kws_streaming.models import model_params
 from kws_streaming.models import model_utils
 from kws_streaming.models import models as kws_models
 
-models_utils = tf._keras_internal.models  # pylint: disable=protected-access
-functional = tf._keras_internal.engine.functional  # pylint: disable=protected-access
-
+#models_utils = tf._keras_internal.models  # pylint: disable=protected-access
+#functional = tf._keras_internal.engine.functional  # pylint: disable=protected-access
+from tensorflow import keras
+models_utils = keras.models
+functional = keras.engine.functional
 
 def save_model_summary(model, path, file_name='model_summary.txt'):
   """Saves model topology/summary in text format.
